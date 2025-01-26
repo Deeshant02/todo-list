@@ -1,3 +1,33 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import 'media';
+
+
+$bgColor_light: white;
+$bgColor_dark: black;
+
+$textColor_light: black;
+$textColor_dark: white;
+
+$borderColor_light: black;
+$borderColor_dark: white;
+
+@mixin lighten() {
+    background: $bgColor_light;
+    color: $textColor_light;
+    border-color: $borderColor_light;
+}
+
+@mixin darken() {
+    background: $bgColor_dark;
+    color: $textColor_dark;
+    border-color: $borderColor_dark;
+}
+
+body.dark {
+    @include darken();
+}
+
+body.light {
+    @include lighten();
+}

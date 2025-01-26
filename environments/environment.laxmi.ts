@@ -1,3 +1,4 @@
 export const environment = {
-    isLaxmi: true
+    isLaxmi: true,
+    isDark: false
 }
