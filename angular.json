@@ -33,7 +33,7 @@
             ],
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "src/styles.scss"
+              "src/scss/styles.scss"
             ],
             "scripts": [
               "node_modules/bootstrap/dist/js/bootstrap.min.js"
@@ -46,6 +46,27 @@
           },
           "configurations": {
             "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kB",
+                  "maximumError": "1MB"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kB",
+                  "maximumError": "4kB"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "laxmi": {
+              "fileReplacements": [
+                {
+                  "replace": "/environments/environment.ts",
+                  "with": "/environments/environment.laxmi.ts"
+                }
+              ],
               "budgets": [
                 {
                   "type": "initial",
@@ -74,6 +95,9 @@
             "production": {
               "buildTarget": "todo-list:build:production"
             },
+            "laxmi": {
+              "buildTarget": "todo-list:build:laxmi"
+            },
             "development": {
               "buildTarget": "todo-list:build:development"
             }
@@ -99,9 +123,12 @@
               }
             ],
             "styles": [
-              "src/styles.scss"
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "src/scss/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
+            ]
           }
         }
       }
