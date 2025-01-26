@@ -1,0 +1,16 @@
+<nav class="navbar">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+        <img src="assets/images/logo.png" alt="Logo" height="24" class="d-inline-block align-text-top">
+        <span class="text-secondary" [ngClass]="{'text-white': environment?.isDark}">{{'todoList' | translate}}</span>
+        </a>
+
+        <div class="ms-auto">
+            @if (!environment.isDark) {
+                <i class="bi bi-brightness-high-fill text-secondary cursor-pointer" (click)="toggleDarkMode()"></i>
+            } @else {
+                <i class="bi bi-moon-stars-fill cursor-pointer" (click)="toggleDarkMode()"></i>
+            }
+        </div>
+    </div>
+</nav>

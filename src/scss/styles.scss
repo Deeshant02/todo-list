@@ -31,3 +31,7 @@ body.dark {
 body.light {
     @include lighten();
 }
+
+.cursor-pointer {
+    cursor: pointer;
+}
